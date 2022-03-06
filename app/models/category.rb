@@ -1,5 +1,3 @@
 class Category < ApplicationRecord
-    has_many :memos
-    validates :title, :body, :category_id, presence: true
-    validates_uniqueness_of :body && :title
+    has_many :memos, dependent: :destroy
 end
